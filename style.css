@@ -38,3 +38,8 @@ header a {
 header a:hover {
     
 }
+
+/* HERO SECTIOMN */
+section #hero {
+    display: flex;
+}

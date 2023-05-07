@@ -1,23 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Cinzel:wght@400;500;600;700&family=Meow+Script&family=Poiret+One&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@font-face {
+    font-family: 'myWebFont';
+    src: url(fonts/UniversityRomanRegular/University\ Roman\ Regular.ttf);
+}
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&family=Ms+Madi&display=swap');
 
+/* colors */
+:root {
+    --slateBlue: rgb (81, 110, 135);
+}
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Alegreya Sans';
+}
+
+.main {
+    background-image: url(imgs/silverware-and-napkin.jpg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 1px 50px black;
 }
 
 /* heading */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
     padding: .75rem;
-    font-family: Roboto;
 }
 
 header h1 {
-    font-family: 'Poiret One';
-    font-size: 1.75rem;
+    font-family: 'myWebFont';
+    font-weight: 300;
+    font-size: 2rem;
     padding-left: .5rem;
 }
 
@@ -28,7 +46,7 @@ header ul {
 header li {
     display: inline;
     padding: .5rem;
-    color: black;
+    color: rgb(44, 53, 49);
 }
 
 header a {
@@ -36,10 +54,69 @@ header a {
 }
 
 header a:hover {
-    
+    text-decoration: underline;
 }
 
-/* HERO SECTIOMN */
-section #hero {
+/* HERO SECTION */
+#hero {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 80vh;
+}
+
+#hero .hero-item {
+    padding: 1rem;
+    height: 400px;
+    width: 40vw;
+    margin-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    color: rgb(44, 53, 49);
+}
+
+#hero .hero-item h1 {
+    font-family: 'myWebFont';
+    text-transform: uppercase;
+    font-size: 5rem;
+    font-weight: 300;
+    text-align: end;
+}
+
+#hero .hero-item button {
+    width: 100px;
+}
+
+/* SEE-MORE SECTION */
+#see-more h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    color: rgb(44, 53, 49);
+    font-size: 3.5rem;
+    font-family: 'Meow Script';
+    font-weight: 300;
+    word-spacing: 1rem;
+    text-transform: lowercase;
+}
+
+#see-more .container-section {
+    background-color: rgb(81,110,135);
+}
+
+#see-more .container-section .container {
+    width: 100%;
+    display: flex;
+}
+
+#see-more .card {
+    width: 50%;
+    padding: 20px;
+}
+
+#see-more .card img {
+    width: 300px;
 }

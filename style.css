@@ -4,6 +4,7 @@
     src: url(fonts/UniversityRomanRegular/University\ Roman\ Regular.ttf);
 }
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
 
 /* colors */
 :root {
@@ -14,14 +15,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Alegreya Sans';
 }
 
 .main {
     background-image: url(imgs/silverware-and-napkin.jpg);
     background-position: center;
     background-size: cover;
-    box-shadow: 0 1px 50px black;
+    box-shadow: 0 1px 15px rgb(122, 122, 122);
 }
 
 /* heading */
@@ -62,7 +62,7 @@ header a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 80vh;
+    height: 85vh;
 }
 
 #hero .hero-item {
@@ -94,22 +94,18 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 15vh;
     color: rgb(44, 53, 49);
-    font-size: 3.5rem;
-    font-family: 'Meow Script';
-    font-weight: 300;
+    font-size: 2rem;
+    font-family: Montserrat;
     word-spacing: 1rem;
-    text-transform: lowercase;
-}
-
-#see-more .container-section {
-    background-color: rgb(81,110,135);
 }
 
 #see-more .container-section .container {
     width: 100%;
     display: flex;
+    height: 500px;
+    border: 1px solid black;
 }
 
 #see-more .card {
@@ -117,6 +113,12 @@ header a:hover {
     padding: 20px;
 }
 
+#see-more .img-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #see-more .card img {
-    width: 300px;
+    height: 100%;
 }

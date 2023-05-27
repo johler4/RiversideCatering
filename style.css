@@ -1,115 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Cinzel:wght@400;500;600;700&family=Meow+Script&family=Poiret+One&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @font-face {
     font-family: 'myWebFont';
     src: url(fonts/UniversityRomanRegular/University\ Roman\ Regular.ttf);
 }
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&family=Ms+Madi&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap');
 
-/* colors */
 :root {
-    --slateBlue: rgb (81, 110, 135);
+    --slateBlue: rgb(81, 110, 135);
 }
 
 * {
+    box-sizing: border-box;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    font-family: Raleway;
+    font-weight: 400;
 }
 
-.main {
-    background-image: url(imgs/knife_background.jpg);
-    background-position: center;
-    background-size: cover;
-    box-shadow: 0 1px 15px rgb(122, 122, 122);
-    height: 100vh;
-}
+/*------------------*/
+/* ---NAVIGATION--- */
+/*------------------*/
 
-/* heading */
-header {
+nav {
+    padding: 10px;
+    font-size: 1.2rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: .75rem;
-}
-
-header h1 {
-    font-family: 'myWebFont';
-    font-weight: 300;
-    font-size: 2rem;
-    padding-left: .5rem;
-}
-
-header ul {
-    list-style-type: none;
-}
-
-header li {
-    display: inline;
-    padding: .5rem;
-    color: rgb(255, 255, 255);
-}
-
-header a {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    z-index: 1;
-    text-decoration: none;
-}
-  
-header a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: .07em;
-    height: .1em;
+    position: fixed;
     width: 100%;
-    background: rgba(255, 255, 255, .3);
-    z-index: -1;
-    transition: height .25s cubic-bezier(.6,0,.4,1), color .25s cubic-bezier(.6,0,.4,1);
+    z-index: 9999;
+    transition: .5s;
 }
 
-header a:active {
-    transform: scale(1.2);
-}
-  
-header a:hover::after {  
-    height: 100%;
+nav li {
+    display: inline;
+    padding: 5px;
 }
 
-/* HERO SECTION */
-#hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+nav a {
+    padding: 2px;
+    text-decoration: none;
+    color: white;
+    box-shadow: inset 0 0 0 0 white;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+nav a:hover {
+    box-shadow: inset 250px 0 0 0 white;
+    color: black;
+}
+
+nav a:active {
+    box-shadow: inset 250px 0 0 0 black;
+    color: white;
+    transition: .1s;
+}
+
+nav.sticky {
+    background-color: rgb(255, 255, 255);
+}
+
+nav.sticky a {
+    color: black;
+}
+
+nav.sticky a:hover {
+    box-shadow: inset 250px 0 0 0 black;
+    color: white;
+}
+
+/*------------------*/
+/* --HERO-SECTION-- */
+/*------------------*/
+
+.hero-section {
     height: 100vh;
-}
-
-#hero .hero-item {
-    padding: 1rem;
-    height: 400px;
-    min-width: 40vw;
-    background:rgba(0, 0, 0, 0.4);
-    margin-right: 1.5rem;
+    background-image: url(imgs/knife_background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
+    transition: 0.3s;
+    color: white;
 }
 
-#hero .hero-item h1 {
-    font-family: 'myWebFont';
+.hero-section div {
+    min-height: 70%;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section div * {
+    margin: 10px;
+}
+
+.hero-section h1 {
+    font-family: "myWebFont";
+    font-size: 7rem;
     text-transform: uppercase;
-    font-size: 6rem;
     font-weight: 300;
-    text-align: end;
+    text-align: center;
 }
 
-#hero .hero-item button {
+.hero-section h2 {
+    font-size: 2rem;
+}
+
+.hero-section button {
+    font-size: 1.5rem;
     padding: 10px;
+    border-radius: 5px;
     text-transform: uppercase;
     background-color: inherit;
     color: rgb(255, 255, 255);
@@ -117,70 +128,125 @@ header a:hover::after {
     transition: all .5s ease;
 }
 
-#hero .hero-item button:hover {
+.hero-section button:hover {
     transform: scale(1.2);
     cursor: pointer;
     transition: all .1s ease;
 }
 
-#hero .hero-item button:active {
+.hero-section button:active {
     transform: scale(.9);
 }
 
-/* SEE-MORE SECTION */
-#see-more h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 15vh;
-    color: rgb(44, 53, 49);
-    font-size: 2rem;
-    font-family: Montserrat;
-    word-spacing: 1rem;
-}
+/*------------------*/
+/*---ABOUT-SECTION--*/
+/*------------------*/
 
-#see-more .container-section .container {
-    width: 100%;
-    display: flex;
-    height: 500px;
-    border: 1px solid black;
-}
-
-#see-more .card {
-    width: 50%;
-    padding: 20px;
-}
-
-#see-more .img-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#see-more .card img {
-    height: 100%;
-}
-
-
-/* menu page */
-
-.menu *{
-    border: 1px dashed red;
-}
-
-.menu {
-    border: 1px dashed red;
-    position: absolute;
-    width: 100%;
+.about {
+    min-height: 800px;
     display: flex;
     flex-direction: column;
-    color: white;
+    justify-content: center;
 }
 
-.menu h2 {
-    font-size: 5rem;
+.container h3 {
+    padding: 1rem;
+    text-align: center;
+    align-self: flex-start;
+    font-size: 2.5rem;
+    border-bottom: 2px solid black;
 }
 
-.menu .menu-container {
-    font-size: 4rem;
+.container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container div {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container p {
+    margin: 10px;
+    font-size: 1.4rem;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.container img {
+    max-height: 500px;
+}
+
+/*------------------*/
+/*---INFO-SECTION---*/
+/*------------------*/
+
+.info {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--slateBlue);
+}
+
+.info .container div {
+    background-color: rgba(255, 255, 255, 0.45);
+}
+
+/*------------------*/
+/*------FOOTER------*/
+/*------------------*/
+
+footer {
+    min-height: 200px;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer button {
+    font-size: 1.5rem;
+    padding: 10px;
+    text-transform: uppercase;
+    background-color: var(--slateBlue);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    border: none;
+    transition: all .5s ease;
+}
+
+footer button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all .1s ease;
+}
+
+footer button:active {
+    transform: scale(.9);
+}
+
+footer .contact-info {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+footer .contact-info div{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.contact-info span {
+    border-bottom: 1px solid black;
+    align-self: flex-start;
 }
